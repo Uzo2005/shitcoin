@@ -1,5 +1,8 @@
 My own blockchain. The currency is shitcoin.
 Please buy my coin so I can rugpull you and get rich :=|
+#### How it works
+Nodes can sync and broadcast. Clients can make and broadcast transactions. Mining increases nonce until sha256 hash starts with 4 zeroes.
+Nodes verify transaction signature before processing it.
 
 To run it:
  1. Install Nim
