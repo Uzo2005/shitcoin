@@ -58,13 +58,13 @@ proc adjustBalance(db: DbConn, sender, receiver: string, amount: int) =
     db.exec(sql"BEGIN")
     db.exec(
         sql"""
-            UPDATE ledger SET balance = (balance - ?) WHERE publicKey = ? 
+            UPDATE wallets SET balance = (balance - ?) WHERE publicKey = ? 
         """, amount, sender
     )
 
     db.exec(
         sql"""
-            UPDATE ledger  SET balance = (balance + ?) WHERE publicKey = ?
+            UPDATE wallets  SET balance = (balance + ?) WHERE publicKey = ?
         """, amount, receiver
     )
 
