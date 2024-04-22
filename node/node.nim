@@ -97,7 +97,7 @@ proc broadcastBlock(nodes: seq[string], newBlock: Block) =
     let networkSocket = newSocket()
     for node in nodes:
         # networkSocket.connect(node, protocolPort)
-        networkSocket.connect(node, Port(2006))
+        networkSocket.connect(node, protocolPort)
         networkSocket.send(broadcastHeader(len($newBlock)) & $newBlock)
 
 proc handleCommand(address: string, command: Command, data: string): string =
